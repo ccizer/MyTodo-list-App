@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>User Registration</title>
+
+    <link th:href="@{/css/custom.css}" rel="stylesheet" media="screen"/>
+
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div sec:authorize="isAnonymous()">
+                            <h1>Register to MyTodo App</h1>
+                        </div>
+                    </div>
+                    <hr/>
+                    <br/>
+                    <div class="row">
+                            <div class="col-xs-12">
+                                <form th:action="@{/register}" th:object="${user}" id="register-form" method="post" role="form">
+                                    <div class="form-group">
+                                        <input type="text" th:field="*{username}" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value=""/>
+                                        <div class="errormsg" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" th:field="*{password}" name="password" id="password" tabindex="2" class="form-control" placeholder="Password"/>
+                                        <div class="errormsg" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" th:field="*{name}" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value=""/>
+                                        <div class="errormsg" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" th:field="*{lastName}" name="lastname" id="lastname" tabindex="1" class="form-control" placeholder="Last name" value=""/>
+                                        <div class="errormsg" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" th:field="*{email}" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value=""/>
+                                        <div class="errormsg" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+                                        <div class="errormsg" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}">Global Error</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="btn btn-register" value="Register Now"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr/>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer" style="text-align:center; color:#C0C0C0;">
+        <h6>Can Çizer © 2016</h6>
+    </div>
+</div>
+</body>
+</html>

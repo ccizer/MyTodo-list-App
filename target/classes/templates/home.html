@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>MyTodo List Homepage</title>
+
+    <link th:href="@{/css/custom.css}" rel="stylesheet" media="screen"/>
+
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-1">
+                        <div sec:authorize="isAuthenticated()">
+                            <ul class="breadcrumb" style="background-color: white">
+                                <li class="active">Home</li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="col-xs-11">
+                        <div sec:authorize="isAnonymous()">
+                            <h1>Welcome to MyTodo List</h1>
+                        </div>
+                        <div sec:authorize="isAuthenticated()">
+                            <h1 th:text="'Welcome, ' + ${user == null ? '' : user.username} + '!'"></h1>
+                        </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <br/>
+                    <div class="row">
+                        <div sec:authorize="isAnonymous()">
+                            <div class="col-xs-12">
+                                <p>Click <a th:href="@{/login}" id="login-form-link">here</a> to login</p>
+                                <p>Click <a th:href="@{/register}" id="register-form-link">here</a> to register</p>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div sec:authorize="isAuthenticated()">
+                            <div class="col-xs-12">
+                                <p>Click <a th:href="@{/lists}" id="login-form-link">here</a> to see the Todo Lists</p>
+                                <form th:action="@{/logout}" method="post">
+                                    <input type="submit" value="Log Out"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer" style="text-align:center; color:#C0C0C0;">
+        <h6>Can Çizer © 2016</h6>
+    </div>
+</div>
+</body>
+</html>
