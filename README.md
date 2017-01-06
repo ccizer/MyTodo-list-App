@@ -1,7 +1,11 @@
-# Todo List Application
+# Todo List Web Application
 
 Todo list application for creating new lists and adding new steps to follow.
 Users must be registered first and then can login to the system. After login, the user can create or delete todo lists and add new steps or deletes some of them from the selected todo list. By clicking on each step, the user can check the step as completed with successful.
+
+# Demo
+
+The web application is available on [heroku](https://mytodo-list-app.herokuapp.com).
 
 # Prerequisites
 
@@ -26,7 +30,7 @@ Three test cases were created by using mockito. Test cases provides to see the v
 
 ## Author
 
-Can Çizer
+* **Can Çizer
 
 ## License
 
