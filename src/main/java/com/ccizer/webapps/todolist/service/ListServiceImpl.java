@@ -9,6 +9,7 @@ import com.ccizer.webapps.todolist.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.Set;
 
@@ -22,6 +23,7 @@ import java.util.Set;
  * @since   2017-01-04
  */
 @Service
+@Transactional
 public class ListServiceImpl implements ListService {
     private final ListRepository listRepository;
     private final UserService userService;
