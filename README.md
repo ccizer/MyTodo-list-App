@@ -5,12 +5,13 @@ Users must be registered first and then can login to the system. After login, th
 
 # Demo
 
-The web application is available on [heroku](https://mytodo-list-app.herokuapp.com).
+The web application is available on [Heroku](https://mytodo-list-app.herokuapp.com).
 
 # Prerequisites
 
 This application was developed with the usage of the technologies below;
 
+```
 * Java 8
 * Spring Boot
 * MySQL
@@ -19,18 +20,21 @@ This application was developed with the usage of the technologies below;
 * Maven
 * Mockito
 * Bootstrap
+```
 
 ## Running the tests
 
 Three test cases were created by using mockito. Test cases provides to see the validation of the user registration, list and step creation when the parameters are set. Also, by not setting some parameters, error messages are planned to be seen on purpose.
 
+```
 * UserRegistrationTest
 * ListDefinitionTest
 * StepDefinitionTest
+```
 
 ## Author
 
-* **Can Çizer
+* **Can Çizer**
 
 ## License
 
