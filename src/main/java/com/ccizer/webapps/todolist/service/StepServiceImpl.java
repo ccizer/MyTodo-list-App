@@ -6,6 +6,7 @@ import com.ccizer.webapps.todolist.repository.StepRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 /**
@@ -18,6 +19,7 @@ import java.util.Set;
  * @since   2017-01-04
  */
 @Service
+@Transactional
 public class StepServiceImpl implements StepService{
     private final StepRepository stepRepository;
     private final ListService listService;
