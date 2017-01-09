@@ -25,17 +25,17 @@ import java.util.Set;
 @Service
 @Transactional
 public class ListServiceImpl implements ListService {
-    private final ListRepository listRepository;
-    private final UserService userService;
-    private final StepRepository stepRepository;
+    @Autowired
+    private ListRepository listRepository;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private StepRepository stepRepository;
 
     @Autowired
-    public ListServiceImpl(ListRepository listRepository, UserService userService, StepRepository stepRepository) {
-        this.listRepository = listRepository;
-        this.userService = userService;
-        this.stepRepository = stepRepository;
+    public ListServiceImpl() {
     }
-
+    
     /**
      *
      * Creates a new list.
