@@ -53,8 +53,6 @@ public class ListDefinitionTest {
         viewResolver.setPrefix("/ProjectTodoList/src/main/resources/templates");
         viewResolver.setSuffix(".html");
 
-        listController.setCurrentPrincipalName("ccizer");
-
         this.mockMvc = MockMvcBuilders.standaloneSetup(listController)
                 .setViewResolvers(viewResolver)
                 .setMessageConverters(new MappingJackson2HttpMessageConverter()).build();
