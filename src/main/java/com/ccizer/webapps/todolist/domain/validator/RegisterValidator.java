@@ -22,13 +22,13 @@ import javax.mail.internet.InternetAddress;
  */
 @Component
 public class RegisterValidator implements Validator {
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @Autowired
-    public RegisterValidator(UserService userService) {
-        this.userService = userService;
+    public RegisterValidator() {
     }
-
+    
     @Override
     public boolean supports(Class<?> aClass) {
         return aClass.equals(User.class);
