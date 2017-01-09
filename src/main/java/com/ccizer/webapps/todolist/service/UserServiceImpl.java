@@ -24,14 +24,15 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
-    private final UserRepository userRepository;
-    private final ListRepository listRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private ListRepository listRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ListRepository listRepository){
-        this.userRepository = userRepository;
-        this.listRepository = listRepository;
+    public UserServiceImpl(){
     }
+    
     /**
      *
      * Creates a new user.
