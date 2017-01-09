@@ -3,7 +3,6 @@ package com.ccizer.webapps.todolist.controller;
 import com.ccizer.webapps.todolist.domain.Step;
 import com.ccizer.webapps.todolist.service.ListService;
 import com.ccizer.webapps.todolist.service.StepService;
-import com.ccizer.webapps.todolist.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -28,18 +27,17 @@ import java.util.*;
  */
 @Controller
 public class StepController {
-    private final UserService userService;
-    private final ListService listService;
-    private final StepService stepService;
+    @Autowired
+    private ListService listService;
+    @Autowired
+    private StepService stepService;
+
     private long currentlistID;
 
     @Autowired
-    private StepController(UserService userService, ListService listService, StepService stepService) {
-        this.userService = userService;
-        this.listService = listService;
-        this.stepService = stepService;
+    private StepController() {
     }
-
+    
     /**
      *
      * Model and View GET definition for the path "/steps/{id}".
