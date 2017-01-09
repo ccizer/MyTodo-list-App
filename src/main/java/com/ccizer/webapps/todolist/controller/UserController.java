@@ -23,15 +23,15 @@ import javax.validation.Valid;
  */
 @Controller
 public class UserController {
-    private final UserService userService;
-    private final RegisterValidator registerValidator;
-
     @Autowired
-    public UserController(UserService userService, RegisterValidator registerValidator){
-        this.userService = userService;
-        this.registerValidator = registerValidator;
+    private UserService userService;
+    @Autowired
+    private RegisterValidator registerValidator;
+    
+    @Autowired
+    public UserController(){
     }
-
+    
     /**
      *
      * Checks the user definition validations.
