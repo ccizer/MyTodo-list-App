@@ -14,7 +14,7 @@ This application was developed with the usage of the technologies below;
 ```
 * Java 8
 * Spring Boot
-* MySQL
+* MySQL ( by default h2 )
 * Hibernate JPA, Spring Data
 * Thymeleaf
 * Maven
