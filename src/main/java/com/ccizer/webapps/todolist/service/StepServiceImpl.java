@@ -21,15 +21,15 @@ import java.util.Set;
 @Service
 @Transactional
 public class StepServiceImpl implements StepService{
-    private final StepRepository stepRepository;
-    private final ListService listService;
+    @Autowired
+    private StepRepository stepRepository;
+    @Autowired
+    private ListService listService;
 
     @Autowired
-    public  StepServiceImpl(StepRepository stepRepository, ListService listService){
-        this.stepRepository = stepRepository;
-        this.listService = listService;
+    public  StepServiceImpl(){
     }
-
+    
     /**
      *
      * Creates a new step.
