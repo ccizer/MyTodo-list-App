@@ -31,18 +31,19 @@ import java.util.Map;
  */
 @Controller
 public class ListController {
-    private final UserService userService;
-    private final ListService listService;
-    private final StepService stepService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private ListService listService;
+    @Autowired
+    private StepService stepService;
+
     private String currentPrincipalName;
 
     @Autowired
-    public ListController(UserService userService, ListService listService, StepService stepService) {
-        this.userService = userService;
-        this.listService = listService;
-        this.stepService = stepService;
+    public ListController() {
     }
-
+    
     /**
      *
      * Model and View GET definition for the path "/lists".
