@@ -55,8 +55,6 @@ public class StepDefinitionTest {
         viewResolver.setPrefix("/ProjectTodoList/src/main/resources/templates");
         viewResolver.setSuffix(".html");
 
-        stepController.setCurrentListID((long)1);
-
         this.mockMvc = MockMvcBuilders.standaloneSetup(stepController)
                 .setViewResolvers(viewResolver)
                 .setMessageConverters(new MappingJackson2HttpMessageConverter()).build();
